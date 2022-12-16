@@ -21,6 +21,10 @@ gsed -i 's/persistent_peers = ""/persistent_peers = ""/' config.toml
 gaiad config chain-id theta-testnet-001
 
 
+
+gaiad start --x-crisis-skip-assert-invariants
+
+
 ## Graphana
 curl -O https://dl.grafana.com/oss/release/grafana-7.1.5.darwin-amd64.tar.gz
 ./bin/grafana-server web
