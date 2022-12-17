@@ -1,0 +1,13 @@
+global:
+  scrape_interval:     15s # By default, scrape targets every 15 seconds.
+
+  external_labels:
+    monitor: 'codelab-monitor'
+    
+scrape_configs:
+  - job_name: 'gaia'
+  
+    scrape_interval: 5s
+    
+    static_configs:
+      - targets: ['127.0.0.1:3000']

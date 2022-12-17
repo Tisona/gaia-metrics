@@ -20,20 +20,14 @@ gsed -i 's/persistent_peers = ""/persistent_peers = ""/' config.toml
 
 gaiad config chain-id theta-testnet-001
 
-
-
 gaiad start --x-crisis-skip-assert-invariants
 
-
-## Graphana
-curl -O https://dl.grafana.com/oss/release/grafana-7.1.5.darwin-amd64.tar.gz
-./bin/grafana-server web
+## Testnet
+https://explorer.theta-testnet.polypore.xyz/
 
 
-## Websockets
-https://hub.cosmos.network/main/getting-started/quickstart.html
-https://explorer.theta-testnet.polypore.xyz/blocks
+## API
+
+https://docs.tendermint.com/v0.34/rpc/#/Info/health
+
 http://localhost:26657/status?
-https://github.com/websockets/wscat
-
-https://docs.tendermint.com/v0.34/tendermint-core/subscription.html

@@ -4,19 +4,19 @@ const Registry = client.Registry;
 
 export const registry = new Registry();
 export const gauge = {
-  'a': new client.Gauge({
-    name: 'gaia_a',
-    help: 'gaia_a',
+  'latest_block_height': new client.Gauge({
+    name: 'latest_block_height',
+    help: 'latest_block_height',
     registers: [registry],
   }),
-  'b': new client.Gauge({
-    name: 'gaia_b',
-    help: 'gaia_b',
+  'n_peers': new client.Gauge({
+    name: 'n_peers',
+    help: 'n_peers',
     registers: [registry],
   }),
-  'c': new client.Gauge({
-    name: 'gaia_c',
-    help: 'gaia_c',
+  'desync': new client.Gauge({
+    name: 'desync',
+    help: 'desync',
     registers: [registry],
   }),
 };
