@@ -1,7 +1,8 @@
 import http from 'http';
 import moment from 'moment';
-import { gauge, registry } from './prometheus';
-import { request } from './request';
+
+import {gauge, registry} from './prometheus';
+import {request} from './request';
 
 const hostname = '127.0.0.1';
 const port = 3000;
@@ -10,7 +11,6 @@ const server = http.createServer(async (_req, res) => {
   const status = await request('status');
   const net_info = await request('net_info');
   const m = await registry.metrics();
-
 
   const data = status.data.result.sync_info;
   const latest_block_height = Number(data.latest_block_height);
