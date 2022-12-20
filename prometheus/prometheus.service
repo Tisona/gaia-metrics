@@ -1,0 +1,14 @@
+[Unit]
+Description=prometheus
+After=network-online.target
+
+[Service]
+User=prometheus
+WorkingDirectory=/home/prometheus/prometheus
+ExecStart=/home/prometheus/prometheus/prometheus --web.listen-address="0.0.0.0:9099" --web.config.file="auth.yml"
+Restart=always
+RestartSec=3
+LimitNOFILE=4096
+
+[Install]
+WantedBy=multi-user.target

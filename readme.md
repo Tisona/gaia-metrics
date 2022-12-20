@@ -2,6 +2,18 @@
 https://github.com/cosmos/testnets/tree/master/public
 https://github.com/hyphacoop/cosmos-ansible
 
+## Cosmovisor
+journalctl -fu cosmovisor
+
+## Prometheus
+nano /etc/systemd/system/prometheus.service
+
+journalctl -fu prometheus.service
+journalctl -u prometheus.service -f
+
+sudo systemctl daemon-reload
+sudo systemctl start prometheus.service
+sudo systemctl enable prometheus.service
 
 ## Manual Installation
 
