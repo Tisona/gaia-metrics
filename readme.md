@@ -40,8 +40,19 @@ gaiad start --x-crisis-skip-assert-invariants
 ## Testnet
 https://explorer.theta-testnet.polypore.xyz/
 
-## App 
+## Node app 
+```
+npm run dev
+npm run build
 http://127.0.0.1:3000/
+```
+
+## Go app 
+```
+go run main.go
+go build
+http://127.0.0.1:3000/
+```
 
 
 ## API

@@ -1,3 +1,3 @@
-app/node_modules
-app/.nycrc.json
-app/build
+app/node/node_modules
+app/node/.nycrc.json
+app/node/build
