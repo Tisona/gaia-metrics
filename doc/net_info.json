@@ -1,0 +1,13 @@
+
+{
+	"jsonrpc": "2.0",
+	"id": -1,
+	"result": {
+	  "listening": true,
+	  "listeners": [
+		"Listener(@)"
+	  ],
+	  "n_peers": "0",
+	  "peers": []
+	}
+  }

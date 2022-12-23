@@ -1,0 +1,43 @@
+
+{
+	"jsonrpc": "2.0",
+	"id": -1,
+	"result": {
+	  "node_info": {
+		"protocol_version": {
+		  "p2p": "8",
+		  "block": "11",
+		  "app": "0"
+		},
+		"id": "e2e9259905e57fe102732a9f351d635e7ebbf950",
+		"listen_addr": "tcp://0.0.0.0:26656",
+		"network": "theta-testnet-001",
+		"version": "v0.34.14",
+		"channels": "40202122233038606100",
+		"moniker": "CUSTOM_MONIKER",
+		"other": {
+		  "tx_index": "on",
+		  "rpc_address": "tcp://127.0.0.1:26657"
+		}
+	  },
+	  "sync_info": {
+		"latest_block_hash": "EE35E725A16E13824F4B63D77B8863F593037656843785579DA74698FAE8EAD4",
+		"latest_app_hash": "CD5E87AA46D79AC57CA9522648DBD0480AA8A8FA4F51B02C31696C5FC3C5CE19",
+		"latest_block_height": "13630014",
+		"latest_block_time": "2022-12-16T19:00:54.680649767Z",
+		"earliest_block_hash": "897163B9F891A9A02FD55F2F012521AEBA7FE69CA61F9CD67BE8CD9E70280692",
+		"earliest_app_hash": "60F6025883290DC7589523C3BDE6C78D01A188B0322872EDA0AA92372DB43945",
+		"earliest_block_height": "13629001",
+		"earliest_block_time": "2022-12-16T17:27:55.952757854Z",
+		"catching_up": true
+	  },
+	  "validator_info": {
+		"address": "5C61D12FA83524DA39626F12629A8C467EC780F1",
+		"pub_key": {
+		  "type": "tendermint/PubKeyEd25519",
+		  "value": "/JqonJNKAhMR2znP1U2cKrnw6V3Jcaqbd/Pe1HcIsqU="
+		},
+		"voting_power": "0"
+	  }
+	}
+  }
