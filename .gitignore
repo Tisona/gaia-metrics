@@ -1,3 +1,5 @@
 metrics/node/node_modules
 metrics/node/.nycrc.json
 metrics/node/build
+
+metrics/go/app
