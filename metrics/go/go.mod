@@ -1,4 +1,4 @@
-module app
+module metrics
 
 go 1.19
 
