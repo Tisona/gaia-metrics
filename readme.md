@@ -1,11 +1,16 @@
-## Ansible Installation
+## Ansible installation
+```
 https://github.com/cosmos/testnets/tree/master/public
 https://github.com/hyphacoop/cosmos-ansible
+```
 
 ## Cosmovisor
+```
 journalctl -fu cosmovisor
+```
 
 ## Prometheus
+```
 nano /etc/systemd/system/prometheus.service
 
 journalctl -fu prometheus.service
@@ -14,8 +19,11 @@ journalctl -u prometheus.service -f
 sudo systemctl daemon-reload
 sudo systemctl start prometheus.service
 sudo systemctl enable prometheus.service
+```
 
-## Manual Installation
+## Manual Installation Cosmos
+```
+Testnet https://explorer.theta-testnet.polypore.xyz/
 
 see https://github.com/cosmos/testnets/tree/master/public
 
@@ -36,9 +44,8 @@ gsed -i 's/persistent_peers = ""/persistent_peers = ""/' config.toml
 gaiad config chain-id theta-testnet-001
 
 gaiad start --x-crisis-skip-assert-invariants
+```
 
-## Testnet
-https://explorer.theta-testnet.polypore.xyz/
 
 ## Node app 
 ```
@@ -54,8 +61,9 @@ go build
 http://127.0.0.1:3000/
 ```
 
-
-## API
+## API used
+```
 https://docs.tendermint.com/v0.34/rpc/#/
 http://localhost:26657/status
 http://localhost:26657/net_info
+```
