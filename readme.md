@@ -1,27 +1,32 @@
-## Ansible installation
+## Metrics Go Daemon
 ```
-https://github.com/cosmos/testnets/tree/master/public
-https://github.com/hyphacoop/cosmos-ansible
+nano /etc/systemd/system/gaiametrics.service
+
+sudo systemctl daemon-reload
+sudo systemctl start gaiametrics.service
+sudo systemctl enable gaiametrics.service
 ```
 
-## Cosmovisor
+See metrics running with
 ```
-journalctl -fu cosmovisor
+journalctl -fu gaiametrics.service
+journalctl -u gaiametrics.service -f
 ```
 
-## Prometheus
+![prometeus desync](img/prometheus_desync.png)
+![metrics running](img/metrics_go.png)
+
+
+## Prometheus Daemon
 ```
 nano /etc/systemd/system/prometheus.service
-
-journalctl -fu prometheus.service
-journalctl -u prometheus.service -f
 
 sudo systemctl daemon-reload
 sudo systemctl start prometheus.service
 sudo systemctl enable prometheus.service
 ```
 
-## Manual Installation Cosmos
+## Cosmos Manual Installation
 ```
 Testnet https://explorer.theta-testnet.polypore.xyz/
 
@@ -44,8 +49,15 @@ gsed -i 's/persistent_peers = ""/persistent_peers = ""/' config.toml
 gaiad config chain-id theta-testnet-001
 
 gaiad start --x-crisis-skip-assert-invariants
+
+journalctl -fu cosmovisor
 ```
 
+## Cosmos Ansible Installation
+```
+https://github.com/cosmos/testnets/tree/master/public
+https://github.com/hyphacoop/cosmos-ansible
+```
 
 ## Node app 
 ```
@@ -54,14 +66,14 @@ npm run build
 http://127.0.0.1:3000/
 ```
 
-## Go app 
+## Go app
 ```
 go run main.go
 go build
 http://127.0.0.1:3000/
 ```
 
-## API used
+## Cosmos API
 ```
 https://docs.tendermint.com/v0.34/rpc/#/
 http://localhost:26657/status

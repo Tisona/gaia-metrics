@@ -1,10 +1,10 @@
 [Unit]
-Description=prometheus
+Description=gaiametrics
 After=network-online.target
 
 [Service]
-User=prometheus
-ExecStart=/home/prometheus/metrics/go/app
+User=gaia
+ExecStart=/home/gaia-metrics/metrics/go/app
 Restart=always
 RestartSec=3
 LimitNOFILE=4096
