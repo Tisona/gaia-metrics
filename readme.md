@@ -1,4 +1,4 @@
-## Description
+### Description
 The repository is the set of tools to collect cosmos node networking performance.
 The metrics collection repository contains three key directories: prometheus, gaia, and metrics.
 
@@ -9,7 +9,7 @@ The metrics are being collected each 5s triggered by Prometheus that queries mid
 The application uses only two endpoints: `http://localhost:26657/status`, `http://localhost:26657/net_info` with three properties collected: `n_peers, latest_block_time, latest_block_height` which can be easilly tuned.
 Full specification of Cosmos API can be found by the link https://docs.tendermint.com/v0.34/rpc/#/
 
-## Cosmos Installation Manual
+### Cosmos Installation Manual
 Installation of the cosmos network even on a testnet might be tricky, the application has undergone updates and has multiple testnets running. I also find that the documentation is not always correct having wrong or outdated values in readme files.
 
 During the development, the test network on my local machine was launched manually.
@@ -46,12 +46,12 @@ cp gaia/config.toml $HOME/.gaia/config
 gaiad start --x-crisis-skip-assert-invariants
 ```
 
-## Cosmos Installation Ansible
+### Cosmos Installation Ansible
 ```
 https://github.com/hyphacoop/cosmos-ansible
 ```
 
-## Metrics Go Installation
+### Metrics Go Installation
 Clone this repository, if was not already clonned - `git clone https://github.com/ivanproskuryakov/gaia-metrics`
 If required, install golang - https://go.dev/doc/install 
 
@@ -63,7 +63,7 @@ go build app.go
 ![metrics running](img/metrics_go.png)
 
 
-## Metrics Go Daemon
+### Metrics Go Daemon
 ```
 nano /etc/systemd/system/gaiametrics.service
 
@@ -77,12 +77,12 @@ See metrics running:
 journalctl -fu gaiametrics.service
 journalctl -u gaiametrics.service -f
 ```
-## Prometheus Installation
+### Prometheus Installation
 ```
 https://prometheus.io/download/
 ```
 
-## Prometheus Daemon
+### Prometheus Daemon
 ```
 nano /etc/systemd/system/prometheus.service
 
@@ -92,7 +92,7 @@ sudo systemctl enable prometheus.service
 ```
 ![prometeus desync](img/prometheus_desync.png)
 
-## Metrics Node Application
+### Metrics Node Application
 The repository contains metrics application wrriten with node.js and TypeScript, see `metrics/node` directory
 ```
 npm run dev
