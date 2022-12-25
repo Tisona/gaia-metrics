@@ -10,13 +10,14 @@ The application uses only two endpoints: `http://localhost:26657/status`, `http:
 Full specification of Cosmos API can be found by the link https://docs.tendermint.com/v0.34/rpc/#/
 
 ### Cosmos Installation Manual
-Installation of the cosmos network even on a testnet might be tricky, the application has undergone updates and has multiple testnets running. I also find that the documentation is not always correct having wrong or outdated values in readme files.
+Installation of the cosmos network even on a testnet might be tricky, gaia has undergone multiple updates with variety of testnets running. The documentation might also be not always correct having wrong or pointing on outdated properties, or readme files.
 
-During the development, the test network on my local machine was launched manually.
+I encorage to read the official documentation https://hub.cosmos.network/main/hub-tutorials/join-testnet.html which will require values for properties `trust_height`, `trust_hash`, `rpc_servers`, `seeds` to be assigned, which you may find this repo.
 
-Testnet explorer: https://explorer.theta-testnet.polypore.xyz/
+Testnet explorer: https://explorer.theta-testnet.polypore.xyz/ <br />
 Testent id: theta-testnet-001
 
+The installation itself.
 
 1. Install and build node with network genesis file downloaded
 ```
@@ -33,7 +34,7 @@ cp genesis.json $HOME/.gaia/config/genesis.json
 gaiad config chain-id theta-testnet-001
 ```
 
-2. Set the network parameters as described here, see https://hub.cosmos.network/main/hub-tutorials/join-testnet.html
+2. Set the network parameters as described here, see https://hub.cosmos.network/main/hub-tutorials/join-testnet.html <br />
 Or just copy the config files from this repo to Gaia home dir `$HOME/.gaia/config`. 
 ```
 cp gaia/app.toml $HOME/.gaia/config
@@ -52,7 +53,7 @@ https://github.com/hyphacoop/cosmos-ansible
 ```
 
 ### Metrics Go Installation
-Clone this repository, if was not already clonned - `git clone https://github.com/ivanproskuryakov/gaia-metrics`
+Clone this repository, if was not already clonned - `git clone https://github.com/ivanproskuryakov/gaia-metrics` <br />
 If required, install golang - https://go.dev/doc/install 
 
 ```
