@@ -51,7 +51,19 @@ gaiad start --x-crisis-skip-assert-invariants
 https://github.com/hyphacoop/cosmos-ansible
 ```
 
-## Metrics - Go Daemon
+## Metrics Go Installation
+Clone this repository, if was not already clonned - `git clone https://github.com/ivanproskuryakov/gaia-metrics`
+If required, install golang - https://go.dev/doc/install 
+
+```
+cd mertics/go
+go build app.go
+./app
+```
+![metrics running](img/metrics_go.png)
+
+
+## Metrics Go Daemon
 ```
 nano /etc/systemd/system/gaiametrics.service
 
@@ -60,14 +72,15 @@ sudo systemctl start gaiametrics.service
 sudo systemctl enable gaiametrics.service
 ```
 
-See metrics running with
+See metrics running:
 ```
 journalctl -fu gaiametrics.service
 journalctl -u gaiametrics.service -f
 ```
-
-![prometeus desync](img/prometheus_desync.png)
-![metrics running](img/metrics_go.png)
+## Prometheus Installation
+```
+https://prometheus.io/download/
+```
 
 ## Prometheus Daemon
 ```
@@ -77,8 +90,10 @@ sudo systemctl daemon-reload
 sudo systemctl start prometheus.service
 sudo systemctl enable prometheus.service
 ```
+![prometeus desync](img/prometheus_desync.png)
 
-## Node app 
+## Metrics Node Application
+The repository contains metrics application wrriten with node.js and TypeScript, see `metrics/node` directory
 ```
 npm run dev
 npm run build
