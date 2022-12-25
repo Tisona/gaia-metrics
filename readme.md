@@ -19,7 +19,7 @@ Testent id: theta-testnet-001
 
 The installation itself.
 
-1. Install and build node with network genesis file downloaded
+#### 1. Install and build node with network genesis file downloaded
 ```
 git clone https://github.com/cosmos/testnets/tree/master/public
 git checkout v7.0.0
@@ -34,7 +34,7 @@ cp genesis.json $HOME/.gaia/config/genesis.json
 gaiad config chain-id theta-testnet-001
 ```
 
-2. Set the network parameters as described here, see https://hub.cosmos.network/main/hub-tutorials/join-testnet.html <br />
+#### 2. Set the network parameters as described here, see https://hub.cosmos.network/main/hub-tutorials/join-testnet.html <br />
 Or just copy the config files from this repo to Gaia home dir `$HOME/.gaia/config`. 
 ```
 cp gaia/app.toml $HOME/.gaia/config
@@ -42,7 +42,7 @@ cp gaia/client.toml $HOME/.gaia/config
 cp gaia/config.toml $HOME/.gaia/config
 ```
 
-3. Launch gaia network
+#### 3. Launch gaia network
 ```
 gaiad start --x-crisis-skip-assert-invariants
 ```
