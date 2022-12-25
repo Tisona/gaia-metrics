@@ -34,7 +34,8 @@ cp genesis.json $HOME/.gaia/config/genesis.json
 gaiad config chain-id theta-testnet-001
 ```
 
-#### 2. Set the network parameters as described here, see https://hub.cosmos.network/main/hub-tutorials/join-testnet.html <br />
+#### 2. Edit network settings
+See https://hub.cosmos.network/main/hub-tutorials/join-testnet.html <br />
 Or just copy the config files from this repo to Gaia home dir `$HOME/.gaia/config`. 
 ```
 cp gaia/app.toml $HOME/.gaia/config
@@ -45,11 +46,6 @@ cp gaia/config.toml $HOME/.gaia/config
 #### 3. Launch gaia network
 ```
 gaiad start --x-crisis-skip-assert-invariants
-```
-
-### Cosmos Installation Ansible
-```
-https://github.com/hyphacoop/cosmos-ansible
 ```
 
 ### Metrics Go Installation
@@ -78,10 +74,10 @@ See metrics running:
 journalctl -fu gaiametrics.service
 journalctl -u gaiametrics.service -f
 ```
+
 ### Prometheus Installation
-```
-https://prometheus.io/download/
-```
+Installation of prometheus is pretty straightforward, see  https://prometheus.io/download/.
+Prometheus operates based on configs, which needs to be tuned or replaced with the config from thsi repo, see `prometheus/prometeus.yml`
 
 ### Prometheus Daemon
 ```
@@ -99,4 +95,10 @@ The repository contains metrics application wrriten with node.js and TypeScript,
 npm run dev
 npm run build
 http://127.0.0.1:3000/
+```
+
+### Cosmos Installation Ansible
+Installation of cosmos with ansible.
+```
+https://github.com/hyphacoop/cosmos-ansible
 ```
