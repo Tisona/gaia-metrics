@@ -8,16 +8,16 @@ func RegisterMetrics(latest_block_height float64, desync float64, n_peers float6
 	r := prometheus.NewRegistry()
 
 	g_latest_block_height := prometheus.NewGauge(prometheus.GaugeOpts{
-		Name: "latest_block_height",
-		Help: "latest_block_height",
+		Name: "gaia_latest_block_height",
+		Help: "gaia_latest_block_height",
 	})
 	g_desync := prometheus.NewGauge(prometheus.GaugeOpts{
-		Name: "desync",
-		Help: "desync",
+		Name: "gaia_desync",
+		Help: "gaia_desync",
 	})
 	g_n_peers := prometheus.NewGauge(prometheus.GaugeOpts{
-		Name: "n_peers",
-		Help: "n_peers",
+		Name: "gaia_n_peers",
+		Help: "gaia_n_peers",
 	})
 
 	g_latest_block_height.Set(latest_block_height)

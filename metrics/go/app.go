@@ -5,11 +5,12 @@ import (
 	"log"
 	"metrics/metrics"
 	"net/http"
+	"os"
 
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 )
 
-var APP_HOST = "127.0.0.1:3000"
+// var APP_HOST = "127.0.0.1:9000"
 
 func index(w http.ResponseWriter, r *http.Request) {
 	latest_block_height, desync, n_peers := metrics.CollectMetrics()
@@ -25,11 +26,23 @@ func index(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	fmt.Println("listening on", APP_HOST)
+	host := os.Getenv("APP_HOST")
+	port := os.Getenv("APP_PORT")
 
-	http.HandleFunc("/", index)
+	if host == "" {
+		host = "127.0.0.1"
+	}
+	if port == "" {
+		port = "9000"
+	}
 
-	err := http.ListenAndServe(APP_HOST, nil)
+	address := fmt.Sprintf("%s:%s", host, port)
+
+	fmt.Println("listening on", address)
+
+	http.HandleFunc("/metrics", index)
+
+	err := http.ListenAndServe(address, nil)
 
 	if err != nil {
 		log.Fatal("ListenAndServe: ", err)
